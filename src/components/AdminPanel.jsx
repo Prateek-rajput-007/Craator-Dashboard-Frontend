@@ -237,10 +237,10 @@ const AdminPanel = ({ token, addToast }) => {
     const fetchData = async () => {
       try {
         const [usersRes, feedRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/admin/users', {
+          axios.get('https://creator-dashboard-backend-syz9.onrender.com/api/admin/users', {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('http://localhost:5000/api/admin/feed-activity', {
+          axios.get('https://creator-dashboard-backend-syz9.onrender.com/api/admin/feed-activity', {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
