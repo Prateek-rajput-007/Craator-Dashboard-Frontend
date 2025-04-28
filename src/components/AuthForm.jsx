@@ -14,7 +14,7 @@ const AuthForm = ({ onLogin, addToast }) => {
     try {
       const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
       const payload = isLogin ? { email, password } : { email, password, role };
-      const response = await axios.post(`http://localhost:5000${endpoint}`, payload);
+      const response = await axios.post(`https://creator-dashboard-backend-syz9.onrender.com${endpoint}`, payload);
       if (isLogin) {
         console.log('Login response:', response.data);
         onLogin(response.data.token, response.data.role);
