@@ -1,6 +1,3 @@
-Here's a refined version of your GitHub README with the required improvements:
-
----
 
 # Creator Dashboard
 
