@@ -25,7 +25,7 @@ const UserAnalytics = memo(({ users, setUsers, token, addToast }) => {
       return;
     }
     try {
-      await axios.put(`http://localhost:5000/api/admin/users/${selectedUser._id}/credits`, { credits: newCredits }, {
+      await axios.put(`https://creator-dashboard-backend-syz9.onrender.com/${selectedUser._id}/credits`, { credits: newCredits }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(users.map(user => (user._id === selectedUser._id ? { ...user, credits: newCredits } : user)));
