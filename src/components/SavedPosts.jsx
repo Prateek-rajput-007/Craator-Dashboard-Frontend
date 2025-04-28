@@ -9,7 +9,7 @@ const SavedPosts = ({ token, savedPosts, addToast }) => {
     console.log('SavedPosts useEffect triggered with savedPosts:', savedPosts);
     const fetchSavedPosts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/feed', {
+        const response = await axios.get('https://creator-dashboard-backend-syz9.onrender.com/api/feed', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setPosts(response.data.filter(post => savedPosts.includes(post._id)) || []);
