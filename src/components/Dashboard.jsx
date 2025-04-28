@@ -17,13 +17,13 @@ const Dashboard = ({ token, role, onLogout, addToast }) => {
     const fetchData = async () => {
       try {
         const [creditsRes, profileRes, activityRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/user/credits', {
+          axios.get('https://creator-dashboard-backend-syz9.onrender.com/api/user/credits', {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('http://localhost:5000/api/user/profile', {
+          axios.get('https://creator-dashboard-backend-syz9.onrender.com/api/user/profile', {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('http://localhost:5000/api/user/activity', {
+          axios.get('https://creator-dashboard-backend-syz9.onrender.com/api/user/activity', {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
