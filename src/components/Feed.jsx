@@ -9,7 +9,7 @@ const Feed = ({ token, savedPosts, addToast, setCredits, onSavePost, onActivityU
     console.log('Feed useEffect triggered with token:', token);
     const fetchFeed = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/feed/', {
+        const response = await axios.get('https://creator-dashboard-backend-syz9.onrender.com/api/feed/', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setPosts(response.data || []);
@@ -37,7 +37,7 @@ const Feed = ({ token, savedPosts, addToast, setCredits, onSavePost, onActivityU
   const handleSave = async (postId) => {
     console.log('Saving post with ID:', postId);
     try {
-      const response = await axios.post(`http://localhost:5000/api/feed/${postId}/save`, {}, {
+      const response = await axios.post(`https://creator-dashboard-backend-syz9.onrender.com/api/feed/${postId}/save`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setCredits(response.data.credits);
@@ -71,7 +71,7 @@ const Feed = ({ token, savedPosts, addToast, setCredits, onSavePost, onActivityU
   const handleReport = async (postId) => {
     console.log('Reporting post with ID:', postId);
     try {
-      const response = await axios.post(`http://localhost:5000/api/feed/${postId}/report`, {}, {
+      const response = await axios.post(`https://creator-dashboard-backend-syz9.onrender.com/api/feed/${postId}/report`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setCredits(response.data.credits);
